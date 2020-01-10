@@ -8,8 +8,8 @@ package equipo2_crudapp_classes.classes;
 import java.util.Objects;
 
 /**
- * Comment entity
- * @author Diego Corral
+ * 
+ * @author Adrián García
  */
 
 public class Comment {
