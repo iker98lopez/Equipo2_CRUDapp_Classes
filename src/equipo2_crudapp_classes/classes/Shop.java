@@ -24,22 +24,29 @@ public class Shop implements Serializable{
     /**
      * ID of the shop.
      */
-    private SimpleIntegerProperty shopId;
+    private final SimpleIntegerProperty shopId;
 
     /**
      * Name of the shop.
      */
-    private SimpleStringProperty name;
+    private final SimpleStringProperty name;
 
     /**
      * URL of the shop.
      */
-    private SimpleStringProperty url;
+    private final SimpleStringProperty url;
 
     /**
      * Image or logo of the shop.
      */
     private byte[] image;
+    
+    
+    public Shop(Integer shopId, String name, String url){
+        this.shopId = new SimpleIntegerProperty(shopId);
+        this.name = new SimpleStringProperty(name);
+        this.url = new SimpleStringProperty(url);
+    }
     
     /**
      * @return the shopId
