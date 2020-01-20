@@ -5,8 +5,8 @@
  */
 package equipo2_crudapp_classes.classes;
 
-import equipo2_crudapp_server.entities.UserPrivilege;
-import equipo2_crudapp_server.entities.UserStatus;
+import equipo2_crudapp_classes.enumerators.UserPrivilege;
+import equipo2_crudapp_classes.enumerators.UserStatus;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;

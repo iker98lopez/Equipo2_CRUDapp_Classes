@@ -41,6 +41,11 @@ public class Shop implements Serializable{
      */
     private byte[] image;
     
+    public Shop() {
+        this.shopId = null;
+        this.name = null;
+        this.url = null;
+    }
     
     public Shop(Integer shopId, String name, String url){
         this.shopId = new SimpleIntegerProperty(shopId);

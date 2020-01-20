@@ -5,7 +5,7 @@
  */
 package equipo2_crudapp_classes.classes;
 
-import equipo2_crudapp_server.entities.SoftwareType;
+import equipo2_crudapp_classes.enumerators.SoftwareType;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
