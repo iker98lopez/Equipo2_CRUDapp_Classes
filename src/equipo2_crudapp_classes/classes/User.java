@@ -89,6 +89,21 @@ public class User {
     private List<Offer> offers;
     
     /**
+     * Constructor with some basic information
+     * @param login
+     * @param password
+     * @param fullName
+     * @param email 
+     */
+    public User(String login, String password, String fullName, String email) {
+        this.login = login;
+        this.password = password;
+        this.fullName = fullName;
+        this.email = email;
+    }
+    
+    
+    /**
      * @return the userId
      */
     public Integer getUserId() {
