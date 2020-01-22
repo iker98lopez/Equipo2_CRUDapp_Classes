@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package equipo2_crudapp_server.entities;
+package equipo2_crudapp_classes.enumerators;
 
 /**
  * Enumerator for the user status on the application. It can be ENABLED or 
