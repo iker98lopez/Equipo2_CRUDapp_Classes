@@ -27,42 +27,68 @@ public class Offer implements Serializable {
     /**
      * ID of the offer.
      */
-    private SimpleIntegerProperty offerId;
+    private final SimpleIntegerProperty offerId;
 
     /**
      * URL of the offer.
      */
-    private SimpleStringProperty url;
+    private final SimpleStringProperty url;
 
     /**
      * Date of expiration for the offer.
      */
-    private SimpleObjectProperty<Date> expiringDate;
+    private final SimpleObjectProperty<Date> expiringDate;
 
     /**
      * Base price of the offer.
      */
-    private SimpleDoubleProperty basePrice;
+    private final SimpleDoubleProperty basePrice;
 
     /**
      * Discounted price of the offer.
      */
-    private SimpleDoubleProperty dicountedPrice;
+    private final SimpleDoubleProperty dicountedPrice;
 
     /**
      * Percentage of discount of the offer.
      */
-    private SimpleIntegerProperty discount;
+    private final SimpleIntegerProperty discount;
 
     /**
      * Shop providing the offer.
      */
-    private SimpleObjectProperty<Shop> shop;
+    private final SimpleObjectProperty<Shop> shop;
 
     /**
      * Set of comments of the offer.
      */
     private Set<Comment> comments;
+
+    public Offer(int offerId, String url, Date expiringDate, Double basePrice, 
+            Double dicountedPrice, int discount, Shop shop,
+            Set<Comment> comments) {
+        this.offerId = new SimpleIntegerProperty(offerId);
+        this.url = new SimpleStringProperty(url);
+        this.expiringDate = new SimpleObjectProperty<Date>(expiringDate);
+        this.basePrice = new SimpleDoubleProperty(basePrice);
+        this.dicountedPrice = new SimpleDoubleProperty(dicountedPrice);
+        this.discount = new SimpleIntegerProperty(discount);
+        this.shop = new SimpleObjectProperty<Shop>(shop);
+        this.comments = comments;
+    }
+    
+    public Offer() {
+        this.offerId = null;
+        this.url = null;
+        this.expiringDate = null;
+        this.basePrice = null;
+        this.dicountedPrice = null;
+        this.discount = null;
+        this.shop = null;
+        this.comments = null;
+    }
+    
+    
 
     /**
      * @return the offerId
