@@ -26,11 +26,26 @@ public class Wish implements Serializable{
     /**
      * The software in the wish
      */
-    private SimpleObjectProperty<Software> software;
+    private final SimpleObjectProperty<Software> software;
     /**
      * Minimum price to be notified when software drops its price
      */
     private SimpleDoubleProperty minPrice;
+
+    public Wish(){
+        this.software = null;
+    }
+    public Wish(Integer id, Software software, Double minPrice) {
+        this.id = id;
+        this.software = new SimpleObjectProperty<Software>(software);
+        this.minPrice = new SimpleDoubleProperty(minPrice);
+    }
+    public Wish(Software software, Double minPrice) {
+        this.software = new SimpleObjectProperty<Software>(software);
+        this.minPrice = new SimpleDoubleProperty(minPrice);
+    }
+    
+    
     
     /**
      * 
