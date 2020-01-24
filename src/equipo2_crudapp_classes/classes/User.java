@@ -89,6 +89,13 @@ public class User {
     private List<Offer> offers;
     
     /**
+     * No-args constructor
+     */
+    public User() {
+        
+    }
+    
+    /**
      * Constructor with some basic information
      * @param login
      * @param password
