@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import javafx.beans.property.SimpleStringProperty;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -30,7 +31,7 @@ public class Software implements Serializable {
     /**
      * Name of the software.
      */
-    private String name;
+    private final SimpleStringProperty name;
 
     /**
      * Publisher of the software.
@@ -64,6 +65,28 @@ public class Software implements Serializable {
      */
     private Software parentSoftware;
 
+    public Software() {
+        this.name = null;
+    }
+    
+    public Software(String name) {
+        this.name = new SimpleStringProperty(name);
+    }
+
+    public Software(Integer softwareId, String name, String publisher, String description, Date releaseDate, SoftwareType softwareType, List<Offer> offers, Software parentSoftware) {
+        this.softwareId = softwareId;
+        this.name = new SimpleStringProperty(name);
+        this.publisher = publisher;
+        this.description = description;
+        this.releaseDate = releaseDate;
+        this.softwareType = softwareType;
+        this.offers = offers;
+        this.parentSoftware = parentSoftware;
+    }
+    
+    
+
+    
     /**
      * @return the softwareId
      */
@@ -82,14 +105,14 @@ public class Software implements Serializable {
      * @return the name
      */
     public String getName() {
-        return name;
+        return this.name.get();
     }
 
     /**
      * @param name the name to set
      */
     public void setName(String name) {
-        this.name = name;
+        this.name.set(name);
     }
 
     /**
@@ -233,6 +256,12 @@ public class Software implements Serializable {
         }
         return true;
     }
-
+    
+    /**
+     * Get name property as StringProperty
+     */
+    public SimpleStringProperty getNameProperty () {
+        return name;
+    }
     
 }
