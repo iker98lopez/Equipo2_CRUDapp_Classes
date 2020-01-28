@@ -9,14 +9,11 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 import java.util.Set;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Represents an offer
+ *
  * @author Diego Corral
  */
 @XmlRootElement
@@ -27,165 +24,139 @@ public class Offer implements Serializable {
     /**
      * ID of the offer.
      */
-    private final SimpleIntegerProperty offerId;
+    private Integer offerId;
 
     /**
      * URL of the offer.
      */
-    private final SimpleStringProperty url;
+    private String url;
 
     /**
      * Date of expiration for the offer.
      */
-    private final SimpleObjectProperty<Date> expiringDate;
+    private Date expiringDate;
 
     /**
      * Base price of the offer.
      */
-    private final SimpleDoubleProperty basePrice;
+    private Double basePrice;
 
     /**
      * Discounted price of the offer.
      */
-    private final SimpleDoubleProperty dicountedPrice;
+    private Double dicountedPrice;
 
     /**
      * Percentage of discount of the offer.
      */
-    private final SimpleIntegerProperty discount;
+    private Integer discount;
 
     /**
      * Shop providing the offer.
      */
-    private final SimpleObjectProperty<Shop> shop;
+    private Shop shop;
 
     /**
      * Set of comments of the offer.
      */
     private Set<Comment> comments;
 
-    public Offer(int offerId, String url, Date expiringDate, Double basePrice, 
-            Double dicountedPrice, int discount, Shop shop,
-            Set<Comment> comments) {
-        this.offerId = new SimpleIntegerProperty(offerId);
-        this.url = new SimpleStringProperty(url);
-        this.expiringDate = new SimpleObjectProperty<Date>(expiringDate);
-        this.basePrice = new SimpleDoubleProperty(basePrice);
-        this.dicountedPrice = new SimpleDoubleProperty(dicountedPrice);
-        this.discount = new SimpleIntegerProperty(discount);
-        this.shop = new SimpleObjectProperty<Shop>(shop);
-        this.comments = comments;
-    }
-    
-    public Offer() {
-        this.offerId = null;
-        this.url = null;
-        this.expiringDate = null;
-        this.basePrice = null;
-        this.dicountedPrice = null;
-        this.discount = null;
-        this.shop = null;
-        this.comments = null;
-    }
-    
-    
-
     /**
      * @return the offerId
      */
     public Integer getOfferId() {
-        return this.offerId.get();
+        return offerId;
     }
 
     /**
      * @param offerId the offerId to set
      */
     public void setOfferId(Integer offerId) {
-        this.offerId.set(offerId);
+        this.offerId = offerId;
     }
 
     /**
      * @return the url
      */
     public String getUrl() {
-        return this.url.get();
+        return url;
     }
 
     /**
      * @param url the url to set
      */
     public void setUrl(String url) {
-        this.url.set(url);
+        this.url = url;
     }
 
     /**
      * @return the expiringDate
      */
     public Date getExpiringDate() {
-        return expiringDate.get();
+        return expiringDate;
     }
 
     /**
      * @param expiringDate the expiringDate to set
      */
     public void setExpiringDate(Date expiringDate) {
-        this.expiringDate.set(expiringDate);
+        this.expiringDate = expiringDate;
     }
 
     /**
      * @return the basePrice
      */
     public Double getBasePrice() {
-        return this.basePrice.get();
+        return basePrice;
     }
 
     /**
      * @param basePrice the basePrice to set
      */
     public void setBasePrice(Double basePrice) {
-        this.basePrice.set(basePrice);
+        this.basePrice = basePrice;
     }
 
     /**
      * @return the dicountedPrice
      */
     public Double getDicountedPrice() {
-        return this.dicountedPrice.get();
+        return dicountedPrice;
     }
 
     /**
      * @param dicountedPrice the dicountedPrice to set
      */
     public void setDicountedPrice(Double dicountedPrice) {
-        this.dicountedPrice.set(dicountedPrice);
+        this.dicountedPrice = dicountedPrice;
     }
 
     /**
      * @return the discount
      */
     public Integer getDiscount() {
-        return this.discount.get();
+        return discount;
     }
 
     /**
      * @param discount the discount to set
      */
     public void setDiscount(Integer discount) {
-        this.discount.set(discount);
+        this.discount = discount;
     }
 
     /**
      * @return the shop
      */
     public Shop getShop() {
-        return this.shop.get();
+        return shop;
     }
 
     /**
      * @param shop the shop to set
      */
     public void setShop(Shop shop) {
-        this.shop.set(shop);
+        this.shop = shop;
     }
 
     /**
@@ -254,10 +225,10 @@ public class Offer implements Serializable {
         }
         return true;
     }
-    
+
     @Override
     public String toString() {
         return "Offer{" + "offerId=" + offerId + ", url=" + url + ", expiringDate=" + expiringDate + ", basePrice=" + basePrice + ", dicountedPrice=" + dicountedPrice + ", discount=" + discount + ", shop=" + shop + ", comments=" + comments + '}';
     }
-    
+
 }
