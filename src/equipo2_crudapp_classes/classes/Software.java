@@ -50,7 +50,6 @@ public class Software implements Serializable {
     /**
      * Type of the software. It can be PROGRAM, GAME or EXTENSION
      */
-
     private SoftwareType softwareType;
 
     /**
@@ -64,6 +63,10 @@ public class Software implements Serializable {
      */
     private Software parentSoftware;
 
+    public Software() {
+
+    }
+
     public Software(Integer softwareId, String name, String publisher, String description, Date releaseDate, SoftwareType softwareType, List<Offer> offers, Software parentSoftware) {
         this.softwareId = softwareId;
         this.name = name;
@@ -74,7 +77,7 @@ public class Software implements Serializable {
         this.offers = offers;
         this.parentSoftware = parentSoftware;
     }
-    
+
     /**
      * @return the softwareId
      */
@@ -243,5 +246,5 @@ public class Software implements Serializable {
             return false;
         }
         return true;
-    }    
+    }
 }
