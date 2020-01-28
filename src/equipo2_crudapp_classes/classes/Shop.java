@@ -8,8 +8,6 @@ package equipo2_crudapp_classes.classes;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -24,75 +22,72 @@ public class Shop implements Serializable{
     /**
      * ID of the shop.
      */
-    private final SimpleIntegerProperty shopId;
+    private Integer shopId;
 
     /**
      * Name of the shop.
      */
-    private final SimpleStringProperty name;
+    private String name;
 
     /**
      * URL of the shop.
      */
-    private final SimpleStringProperty url;
+    private String url;
 
     /**
      * Image or logo of the shop.
      */
     private byte[] image;
     
-    public Shop() {
-        this.shopId = null;
-        this.name = null;
-        this.url = null;
-    }
-    
-    public Shop(Integer shopId, String name, String url){
-        this.shopId = new SimpleIntegerProperty(shopId);
-        this.name = new SimpleStringProperty(name);
-        this.url = new SimpleStringProperty(url);
-    }
-    
     /**
      * @return the shopId
      */
     public Integer getShopId() {
-        return this.shopId.get();
+        return shopId;
     }
 
     /**
      * @param shopId the shopId to set
      */
     public void setShopId(Integer shopId) {
-        this.shopId.set(shopId);
+        this.shopId = shopId;
     }
 
     /**
      * @return the name
      */
     public String getName() {
-        return this.name.get();
+        return name;
+    }
+    
+    /**
+     * Get name property as StringProperty
+     * 
+     * @return the name property
+     */
+    public String getNameProperty () {
+        return name;
     }
 
     /**
      * @param name the name to set
      */
     public void setName(String name) {
-        this.name.set(name);
+        this.name = name;
     }
 
     /**
      * @return the url
      */
     public String getUrl() {
-        return this.url.get();
+        return url;
     }
 
     /**
      * @param url the url to set
      */
     public void setUrl(String url) {
-        this.url.set(url);
+        this.url = url;
     }
 
     /**
@@ -145,14 +140,9 @@ public class Shop implements Serializable{
         }
         return true;
     }
-
-    
     
     @Override
     public String toString() {
         return "Shop{" + "shopId=" + shopId + ", name=" + name + ", url=" + url + ", image=" + image + '}';
     }
-    
-    
-    
 }

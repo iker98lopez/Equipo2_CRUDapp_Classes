@@ -7,18 +7,15 @@ package equipo2_crudapp_classes.classes;
 
 import java.io.Serializable;
 import java.util.Objects;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleObjectProperty;
 
 /**
  *
  * @author Adrián García
  */
+public class Wish implements Serializable {
 
+    private static final long serialVersionUID = 1L;
 
-public class Wish implements Serializable{
-    private static final long  serialVersionUID = 1L;
-    
     /**
      * The id of wish
      */
@@ -26,67 +23,54 @@ public class Wish implements Serializable{
     /**
      * The software in the wish
      */
-    private final SimpleObjectProperty<Software> software;
+    private Software software;
     /**
      * Minimum price to be notified when software drops its price
      */
-    private SimpleDoubleProperty minPrice;
+    private Double minPrice;
 
-    public Wish(){
-        this.software = null;
-    }
-    public Wish(Integer id, Software software, Double minPrice) {
-        this.id = id;
-        this.software = new SimpleObjectProperty<Software>(software);
-        this.minPrice = new SimpleDoubleProperty(minPrice);
-    }
-    public Wish(Software software, Double minPrice) {
-        this.software = new SimpleObjectProperty<Software>(software);
-        this.minPrice = new SimpleDoubleProperty(minPrice);
-    }
-    
-    
-    
     /**
-     * 
+     *
      * @return the wish id
      */
     public Integer getId() {
         return id;
     }
+
     /**
-     * 
-     * @param id 
+     *
+     * @param id
      */
     public void setId(Integer id) {
         this.id = id;
     }
+
     /**
      * @return the software
      */
     public Software getSoftware() {
-        return this.software.get();
+        return software;
     }
 
     /**
      * @param software the software to set
      */
     public void setSoftware(Software software) {
-        this.software.set(software);
+        this.software = software;
     }
 
     /**
      * @return the minPrice
      */
     public Double getMinPrice() {
-        return this.minPrice.get();
+        return minPrice;
     }
 
     /**
      * @param minPrice the minPrice to set
      */
     public void setMinPrice(Double minPrice) {
-        this.minPrice.set(minPrice);
+        this.minPrice = minPrice;
     }
 
     @Override
@@ -126,9 +110,4 @@ public class Wish implements Serializable{
         }
         return true;
     }
-    
-    
-    
-    
-    
 }
