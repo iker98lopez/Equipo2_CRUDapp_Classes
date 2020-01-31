@@ -8,24 +8,23 @@ package equipo2_crudapp_classes.classes;
 import java.util.Objects;
 
 /**
- * 
+ *
  * @author Adrián García
  */
-
 public class Comment {
-    
+
     private static final long serialVersionUID = 1L;
-    
+
     /**
      * The comment id
      */
     private Integer commentId;
-    
+
     /**
      * The text of the comment
      */
     private String comment;
-    
+
     /**
      * The user that has created the comment
      */

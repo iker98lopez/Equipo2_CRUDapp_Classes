@@ -12,11 +12,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Represents a shop
+ *
  * @author Diego Corral
  */
 @XmlRootElement
-public class Shop implements Serializable{
-    
+public class Shop implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -38,16 +39,16 @@ public class Shop implements Serializable{
      * Image or logo of the shop.
      */
     private byte[] image;
-    
+
     public Shop() {
-        
+
     }
-    
-    public Shop(String name, String url){
+
+    public Shop(String name, String url) {
         this.name = name;
         this.url = url;
     }
-    
+
     /**
      * @return the shopId
      */
@@ -140,7 +141,7 @@ public class Shop implements Serializable{
         }
         return true;
     }
-    
+
     @Override
     public String toString() {
         return "Shop{" + "shopId=" + shopId + ", name=" + name + ", url=" + url + ", image=" + image + '}';

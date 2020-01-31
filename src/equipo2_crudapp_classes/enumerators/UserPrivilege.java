@@ -7,15 +7,15 @@ package equipo2_crudapp_classes.enumerators;
 
 /**
  * Enumerator for the user privilege on the application. It can be USER or ADMIN
+ *
  * @author Diego Corral
  */
 public enum UserPrivilege {
-    
+
     /**
      * Value for the normal users of the application
      */
     USER,
-    
     /**
      * Value for the admins of the application
      */

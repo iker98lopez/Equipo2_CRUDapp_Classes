@@ -6,17 +6,17 @@
 package equipo2_crudapp_classes.enumerators;
 
 /**
- * Enumerator for the user status on the application. It can be ENABLED or 
+ * Enumerator for the user status on the application. It can be ENABLED or
  * DISABLED
+ *
  * @author Diego Corral
  */
 public enum UserStatus {
-    
+
     /**
      * The user's account is enabled
      */
     ENABLED,
-    
     /**
      * The user's account is disabled
      */

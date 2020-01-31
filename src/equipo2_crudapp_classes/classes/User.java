@@ -17,11 +17,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Represents an user
+ *
  * @author Diego Corral
  */
 @XmlRootElement
-public class User implements Serializable{
-    
+public class User implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -88,20 +89,21 @@ public class User implements Serializable{
      * A list with all the offers of the user
      */
     private List<Offer> offers;
-    
+
     /**
      * No-args constructor
      */
     public User() {
-        
+
     }
-    
+
     /**
      * Constructor with some basic information
+     *
      * @param login
      * @param password
      * @param fullName
-     * @param email 
+     * @param email
      */
     public User(String login, String password, String fullName, String email) {
         this.login = login;
@@ -109,7 +111,7 @@ public class User implements Serializable{
         this.fullName = fullName;
         this.email = email;
     }
-    
+
     /**
      * @return the userId
      */
@@ -364,12 +366,10 @@ public class User implements Serializable{
         }
         return true;
     }
-    
+
     @Override
     public String toString() {
         return "User{" + "userId=" + userId + ", login=" + login + ", password=" + password + ", fullName=" + fullName + ", email=" + email + ", lastPasswordChange=" + lastPasswordChange + ", lastLogin=" + lastLogin + ", privilege=" + privilege + ", status=" + status + ", image=" + image + ", wishList=" + wishList + ", comments=" + comments + ", offers=" + offers + '}';
     }
-    
-    
-    
+
 }

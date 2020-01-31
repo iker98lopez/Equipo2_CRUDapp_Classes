@@ -12,17 +12,15 @@ package equipo2_crudapp_classes.enumerators;
  * @author iker lopez carrillo
  */
 public enum SoftwareType {
-    
+
     /**
      * Value for softwares that are computer programs.
      */
-    PROGRAM, 
-    
+    PROGRAM,
     /**
      * Value for softwares that are games.
      */
-    GAME, 
-    
+    GAME,
     /**
      * Value for softwares that are an extension of another software.
      */
