@@ -7,6 +7,7 @@ package equipo2_crudapp_classes.classes;
 
 import equipo2_crudapp_classes.enumerators.UserPrivilege;
 import equipo2_crudapp_classes.enumerators.UserStatus;
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -19,7 +20,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Diego Corral
  */
 @XmlRootElement
-public class User {
+public class User implements Serializable{
     
     private static final long serialVersionUID = 1L;
 
@@ -108,7 +109,6 @@ public class User {
         this.fullName = fullName;
         this.email = email;
     }
-    
     
     /**
      * @return the userId

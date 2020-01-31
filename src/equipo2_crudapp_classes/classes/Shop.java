@@ -39,6 +39,15 @@ public class Shop implements Serializable{
      */
     private byte[] image;
     
+    public Shop() {
+        
+    }
+    
+    public Shop(String name, String url){
+        this.name = name;
+        this.url = url;
+    }
+    
     /**
      * @return the shopId
      */
@@ -57,15 +66,6 @@ public class Shop implements Serializable{
      * @return the name
      */
     public String getName() {
-        return name;
-    }
-    
-    /**
-     * Get name property as StringProperty
-     * 
-     * @return the name property
-     */
-    public String getNameProperty () {
         return name;
     }
 
