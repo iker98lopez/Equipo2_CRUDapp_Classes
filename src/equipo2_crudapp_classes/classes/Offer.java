@@ -62,6 +62,11 @@ public class Offer implements Serializable {
     private Set<Comment> comments;
 
     /**
+     * The user that has created the offer
+     */
+    private User user;
+    
+    /**
      * @return the offerId
      */
     public Integer getOfferId() {
@@ -172,18 +177,33 @@ public class Offer implements Serializable {
     public void setComments(Set<Comment> comments) {
         this.comments = comments;
     }
+    
+    /**
+     * @return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 19 * hash + Objects.hashCode(this.offerId);
-        hash = 19 * hash + Objects.hashCode(this.url);
-        hash = 19 * hash + Objects.hashCode(this.expiringDate);
-        hash = 19 * hash + Objects.hashCode(this.basePrice);
-        hash = 19 * hash + Objects.hashCode(this.dicountedPrice);
-        hash = 19 * hash + Objects.hashCode(this.discount);
-        hash = 19 * hash + Objects.hashCode(this.shop);
-        hash = 19 * hash + Objects.hashCode(this.comments);
+        int hash = 5;
+        hash = 29 * hash + Objects.hashCode(this.offerId);
+        hash = 29 * hash + Objects.hashCode(this.url);
+        hash = 29 * hash + Objects.hashCode(this.expiringDate);
+        hash = 29 * hash + Objects.hashCode(this.basePrice);
+        hash = 29 * hash + Objects.hashCode(this.dicountedPrice);
+        hash = 29 * hash + Objects.hashCode(this.discount);
+        hash = 29 * hash + Objects.hashCode(this.shop);
+        hash = 29 * hash + Objects.hashCode(this.comments);
+        hash = 29 * hash + Objects.hashCode(this.user);
         return hash;
     }
 
@@ -199,10 +219,10 @@ public class Offer implements Serializable {
             return false;
         }
         final Offer other = (Offer) obj;
-        if (!Objects.equals(this.offerId, other.offerId)) {
+        if (!Objects.equals(this.url, other.url)) {
             return false;
         }
-        if (!Objects.equals(this.url, other.url)) {
+        if (!Objects.equals(this.offerId, other.offerId)) {
             return false;
         }
         if (!Objects.equals(this.expiringDate, other.expiringDate)) {
@@ -223,12 +243,14 @@ public class Offer implements Serializable {
         if (!Objects.equals(this.comments, other.comments)) {
             return false;
         }
+        if (!Objects.equals(this.user, other.user)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Offer{" + "offerId=" + offerId + ", url=" + url + ", expiringDate=" + expiringDate + ", basePrice=" + basePrice + ", dicountedPrice=" + dicountedPrice + ", discount=" + discount + ", shop=" + shop + ", comments=" + comments + '}';
+        return "Offer{" + "offerId=" + offerId + ", url=" + url + ", expiringDate=" + expiringDate + ", basePrice=" + basePrice + ", dicountedPrice=" + dicountedPrice + ", discount=" + discount + ", shop=" + shop + ", comments=" + comments + ", user=" + user + '}';
     }
-
 }
